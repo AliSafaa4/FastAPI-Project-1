@@ -7,3 +7,4 @@ cryptography==41.0.7
 email_validator==2.1.1
 pydantic==2.7.0
 ujson==5.9.0
+pydantic-settings==2.2.1
