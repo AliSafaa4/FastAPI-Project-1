@@ -1,1 +1,9 @@
-
+fastapi
+alembic==1.13.1
+argcomplete==2.0.0
+bcrypt==4.1.2
+Beaker==1.12.1
+cryptography==41.0.7
+email_validator==2.1.1
+pydantic==2.7.0
+ujson==5.9.0
