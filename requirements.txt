@@ -11,3 +11,4 @@ pydantic-settings==2.2.1
 psycopg==3.1.18
 psycopg-binary==3.1.18
 psycopg2-binary==2.9.9
+python-jose==3.3.0
