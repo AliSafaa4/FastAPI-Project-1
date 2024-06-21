@@ -5,7 +5,7 @@ from .routers import post, user, auth, vote # type: ignore
 from .config import settings
 from fastapi.middleware.cors import CORSMiddleware
 
-models.Base.metadata.create_all(bind=engine)
+# models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
