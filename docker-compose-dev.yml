@@ -1,0 +1,36 @@
+version: "3"
+services: 
+    api:
+      build: .
+      depends_on:
+          # command: bash -c "alembic upgrade head"
+          - postgres
+      ports:
+          - 10000:10000
+      # volumes:
+      #   - ./:usr/scr/app #didn't work |:
+      command: uvicorn app.main:app --host 0.0.0.0 --port 10000 --reload
+      # env_file: 
+      #   - ./.env
+      environment:
+        - ACCESS_TOKEN_EXPIRE_MINUTES = 30
+        - DATABASE_HOSTNAME = localhost
+        - DATABASE_PORT = 5432
+        - DATABASE_PASSWORD = mysecretpassword
+        - DATABASE_NAME = fastapi
+        - DATABASE_USERNAME = postgres
+        - SECRET_KEY = 09d25e094faa2556c818166b7a99f6f0f4c3b88e8d3e7 
+        - ALGORITHM = HS256
+    postgres:
+      image: postgres
+      environment:
+        - POSTGRES_PASSWORD=mysecretpassword
+        - POSTGRES_DB=fastapi
+
+      volumes:
+          - postgres-db:/var/lib/postgresql/data
+
+
+
+volumes: 
+  postgres-db:
