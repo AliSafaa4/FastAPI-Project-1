@@ -35,7 +35,7 @@ class Post(PostBase): #response model
     user_id : int
     created_at: datetime
     user: UserResponse
-
+ 
     class Config:
         from_attributes=True
 
